@@ -2,7 +2,9 @@
 # Visualization, Interpretation, and Down-Stream Functional Enrichment Analysis of Genes Expression in Glioblastoma Dataset
 Authors (@slack): Malak Abdelfattah Soula (@Malak), Esraa El-zoghby (@EsZo), Zeyad Ashraf (@Zashraf03), Alatise Monsurah (@AlatiseMB), 
 Ahmed Abdel-Maqsoud (@Abdel-Maqsoud), Samuel Aladegbaiye (@Samuel...)
-### code link: (https://github.com/MalakSoula/Glioblastoma-/blob/main/HackBio.R)
+
+[code link](https://github.com/MalakSoula/Glioblastoma-/blob/main/HackBio.R)
+
 In our analysis, we provided heatmaps for both diverging and sequential color palettes to facilitate visualization of gene expression across samples effectively.
 The diverging palette is good for showing deviation from a midpoint-such as zero when one is using Z-scores. This allows for the easy identification of over- and under-expressed genes. 
 On the other hand, the sequential palette shows gradual differences between low and high levels of expression, thus allowing one to recognize the trend in the intensity of gene expression.

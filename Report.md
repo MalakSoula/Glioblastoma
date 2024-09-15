@@ -33,7 +33,8 @@ thus defining subgroups of shared gene expression patterns. So, by following the
 The most powerful visualization came from clustering both samples and genes, reflecting very coherent patterns of co-expressed genes shared between specific sample groups. 
 It enriches the relationship of sample profiles with gene behaviors. It offers much more insight into the biological significance of subtypes, which may be distinct at molecular levels or active pathways.
 ## P Values and Fold Change Calculation:
-P values were calculated using a t-test on the two groups of samples in R, and fold changes were calculated by estimating the means of each row of the first and second groups and subtracting their log2. (Fold change = log2(group2_mean)—log2(group1_mean).) We then used these fold changes to determine if the genes were up or downregulated and used the p values to estimate their significance.
+P values were calculated using a t-test on the two groups of samples in R, and fold changes were calculated by estimating the means of each row of the first and second groups and subtracting their log2. (Fold change = log2(group2_mean)—log2(group1_mean).) We then used these fold changes to determine if the genes were up or downregulated and used the p values to estimate their significance.Where the threshold 
+for the p values where anything less than 0.05 for p values and threshold for fold change was anything higher than 1.5 was considered up-regulated, and any lower than -1.5 is downregulated
 
 ## Enrichment analysis:
 The provided table lists the top 10 enriched pathways based on their significance, the number of genes, the total number of genes, and the fold enrichment.
@@ -45,9 +46,18 @@ The provided table lists the top 10 enriched pathways based on their significanc
 ### Top 3 pathways:
 Among the important pathways, we listed the top three ranked by significance according to their Enrichment FDR.
 
-1-	Alpha-Linolenic Acid Metabolism: This pathway suggests a significant role in fatty acid metabolism.
+1-	Alpha-Linolenic Acid Metabolism: This pathway suggests a significant role in fatty acid metabolism [1].
 
-2-	Linoleic Acid Metabolism: Like alpha-linolenic acid, linoleic acid is another essential fatty acid.
+2-	Linoleic Acid Metabolism: Like alpha-linolenic acid, linoleic acid is another essential fatty acid [2].
 
-3-	Viral Protein Interaction with Cytokine and Cytokine Receptor: This pathway suggests a significant interaction between viral proteins and host immune signaling mechanisms. 
+3-	Viral Protein Interaction with Cytokine and Cytokine Receptor: This pathway suggests a significant interaction between viral proteins and host immune signaling mechanisms [3]. 
+
+# References:
+
+1- Reactome.org. (2024). alpha-linolenic acid (ALA) metabolism. [online] Available at: https://reactome.org/content/detail/R-HSA-2046106#:~:text=Alpha%2Dlinolenic%20acid%20(ALA%2C [Accessed 15 Sep. 2024].
+
+2- Gunstone, F.D. (2003). FATTY ACIDS | Gamma-linolenic Acid. [online] ScienceDirect. Available at: https://www.sciencedirect.com/science/article/abs/pii/B012227055X00448X.
+
+3- Genome.jp. (2024). KEGG PATHWAY: Viral protein interaction with cytokine and cytokine receptor - Homo sapiens (human). [online] Available at: 
+   https://www.genome.jp/pathway/hsa04061#:~:text=Homo%20sapiens%20(human)- [Accessed 15 Sep. 2024].
 

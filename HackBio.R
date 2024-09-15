@@ -62,6 +62,10 @@ down_regulated <- results %>%
   filter(FoldChange < -1.5, PValue < 0.05)
 up_regulated
 down_regulated
+                                            
+# save up and down-regulated genes
+write.csv(up_regulated,"up_regulated_genes.csv", row.names = FALSE)
+write.csv(down_regulated,"down_regulated_genes.csv", row.names = FALSE)                                            
 
 ## Enrichment analysis 
 

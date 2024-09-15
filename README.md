@@ -5,39 +5,35 @@ Ahmed Abdel-Maqsoud (@Abdel-Maqsoud), Samuel Aladegbaiye (@Samuel...)
 
 [code link](https://github.com/MalakSoula/Glioblastoma-/blob/main/HackBio.R)
 
-In our analysis, we provided heatmaps for both diverging and sequential color palettes to facilitate visualization of gene expression across samples effectively.
-The diverging palette is good for showing deviation from a midpoint-such as zero when one is using Z-scores. This allows for the easy identification of over- and under-expressed genes. 
-On the other hand, the sequential palette shows gradual differences between low and high levels of expression, thus allowing one to recognize the trend in the intensity of gene expression.
+In our analysis, we provided heatmaps for both diverging and sequential color palettes to facilitate the effective visualization of gene expression across samples.
+The diverging palette is good for showing deviation from a midpoint, such as zero when using Z-scores. This allows for the easy identification of over- and under-expressed genes. 
+On the other hand, the sequential palette shows gradual differences between low and high levels of expression, thus allowing one to recognize the trend in the intensity of gene expression. The Z-score values were calculated by using the scale function in R. This function utilizes the following formula z= (x−μ)/σ, Where x is the individual value, μ is the mean of the values in that column, and σ is the standard deviation of the values in that column.
 
- ![Picture1](https://github.com/user-attachments/assets/984df331-2a4c-42e7-b6ad-a7cc54758463)
+ 
+
+![Picture1](https://github.com/user-attachments/assets/984df331-2a4c-42e7-b6ad-a7cc54758463)
 
 ![Picture2](https://github.com/user-attachments/assets/f6683fc9-26f7-4a38-9cc3-bce38bf46a06)
 
-The first heatmaps showed an overview of the gene expression, where there was a lot of variation among the samples.
-Specific patterns and trends were hard to recognize since the data had not been clustered yet.
-That showed some genes were highly expressed across many samples, as depicted in dark blue color, and others in light green color were downregulated. 
+The first heatmaps showed an overview of gene expression, which varied widely among the samples.
+Specific patterns and trends were complex since the data had yet to be clustered.
 
 ![Picture3](https://github.com/user-attachments/assets/088d33fd-48ea-47b5-9fdd-cbee072d82de)
 
 ![Picture4](https://github.com/user-attachments/assets/94b41495-46c6-4a6d-af43-d8157f057243)
 
 
-We then did cluster of samples based on expression similarity and found some groupings. Similar expression profiles placed the samples closer together, 
-thus defining subgroups of shared gene expression patterns. This clustering underlined biological relationships by suggesting that these sample groups are 
-probably influenced by similar underlying biological processes.
+We then clustered samples based on expression similarity and found some groupings. Similar expression profiles placed the samples closer together, 
+thus defining subgroups of shared gene expression patterns. So, by following the pattern expressed in the heatmaps, we separated the samples into two groups, which helped us generate the p values and calculate the fold changes.
 
 ![Picture5](https://github.com/user-attachments/assets/636a8eb7-c797-4db0-bf5a-d7d1bfd88cda)
 
 ![Picture6](https://github.com/user-attachments/assets/7ae13e89-0ded-4a05-96b3-685cf9e2b96d)
 
-                        
-We also carried out unsupervised clustering of genes by co-expression across the samples, where genes that were similarly behaving are clustered.
-Indeed, patterns of coregulated genes emerge where groups of genes show consistent expression in a subset of various samples (dark blue regions). 
-This can help with gene clusters likely to be involved in the same pathways or biological functions
-
 The most powerful visualization came from clustering both samples and genes, reflecting very coherent patterns of co-expressed genes shared between specific sample groups. 
-It enriches the relationship of sample profiles with gene behaviors and offers so much more insightful views into the biological significance of subtypes
-which may be distinct at molecular levels or active pathways.
+It enriches the relationship of sample profiles with gene behaviors. It offers much more insight into the biological significance of subtypes, which may be distinct at molecular levels or active pathways.
+## P Values and Fold Change Calculation:
+P values were calculated using a t-test on the two groups of samples in R, and fold changes were calculated by estimating the means of each row of the first and second groups and subtracting their log2. (Fold change = log2(group2_mean)—log2(group1_mean).) We then used these fold changes to determine if the genes were up or downregulated and used the p values to estimate their significance.
 
 ## Enrichment analysis:
 The provided table lists the top 10 enriched pathways based on their significance, the number of genes, the total number of genes, and the fold enrichment.
